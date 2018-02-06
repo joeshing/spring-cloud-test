@@ -15,4 +15,12 @@
 	<name>cloud-mall-provider</name>
 	<description>Demo project for Spring Boot</description>
 	
+	
+	<dependencies>
+		<dependency>
+			<groupId>xyz.timesun.cloud</groupId>
+			<artifactId>cloud-mall-core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 </project>

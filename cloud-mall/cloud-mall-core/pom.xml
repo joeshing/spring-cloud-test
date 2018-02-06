@@ -8,18 +8,10 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>xyz.timesun.cloud</groupId>
-	<artifactId>cloud-mall-consumer</artifactId>
+	<artifactId>cloud-mall-core</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>cloud-mall-consumer</name>
+	<name>cloud-mall-core</name>
 	<description>Demo project for Spring Boot</description>
-	
-	<dependencies>
-		<dependency>
-			<groupId>xyz.timesun.cloud</groupId>
-			<artifactId>cloud-mall-core</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-	</dependencies>
 </project>
