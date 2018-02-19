@@ -13,7 +13,7 @@
 	<packaging>jar</packaging>
 
 	<name>cloud-mall-provider</name>
-	<description>Demo project for Spring Boot</description>
+	<description>服务提供者</description>
 	
 	
 	<dependencies>
