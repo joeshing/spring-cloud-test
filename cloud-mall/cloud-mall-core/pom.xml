@@ -13,5 +13,5 @@
 	<packaging>jar</packaging>
 
 	<name>cloud-mall-core</name>
-	<description>Demo project for Spring Boot</description>
+	<description>核心包</description>
 </project>
