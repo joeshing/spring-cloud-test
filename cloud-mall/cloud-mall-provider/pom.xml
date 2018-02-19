@@ -3,11 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>xyz.timesun.cloud</groupId>
+		<groupId>xyz.timessun.cloud</groupId>
 		<artifactId>cloud-mall</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>xyz.timesun.cloud</groupId>
+	<groupId>xyz.timessun.cloud</groupId>
 	<artifactId>cloud-mall-consumer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
@@ -17,7 +17,7 @@
 	
 	<dependencies>
 		<dependency>
-			<groupId>xyz.timesun.cloud</groupId>
+			<groupId>xyz.timessun.cloud</groupId>
 			<artifactId>cloud-mall-core</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>

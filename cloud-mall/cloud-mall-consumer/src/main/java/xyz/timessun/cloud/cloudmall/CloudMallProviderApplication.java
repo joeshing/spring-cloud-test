@@ -1,4 +1,4 @@
-package xyz.timesun.cloud.cloudmall;
+package xyz.timessun.cloud.cloudmall;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

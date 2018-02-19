@@ -1,6 +1,6 @@
-package xyz.timesun.cloud.cloudmall.service;
+package xyz.timessun.cloud.cloudmall.service;
 
-import xyz.timesun.cloud.cloudmall.core.bo.UserBO;
+import xyz.timessun.cloud.cloudmall.core.bo.UserBO;
 
 public interface UserService {
 

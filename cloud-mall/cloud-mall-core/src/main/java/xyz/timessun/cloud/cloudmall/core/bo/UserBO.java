@@ -1,4 +1,4 @@
-package xyz.timesun.cloud.cloudmall.core.bo;
+package xyz.timessun.cloud.cloudmall.core.bo;
 
 public class UserBO {
 

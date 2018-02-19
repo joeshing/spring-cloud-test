@@ -10,7 +10,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	
-	<groupId>xyz.timesun.cloud</groupId>
+	<groupId>xyz.timessun.cloud</groupId>
 	<artifactId>cloud-mall</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>

@@ -1,4 +1,4 @@
-package xyz.timesun.cloud.cloudmall.web;
+package xyz.timessun.cloud.cloudmall.web;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;

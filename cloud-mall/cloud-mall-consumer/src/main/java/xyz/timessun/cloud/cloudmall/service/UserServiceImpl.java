@@ -1,4 +1,4 @@
-package xyz.timesun.cloud.cloudmall.service;
+package xyz.timessun.cloud.cloudmall.service;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.stereotype.Component;
 
-import xyz.timesun.cloud.cloudmall.core.bo.UserBO;
+import xyz.timessun.cloud.cloudmall.core.bo.UserBO;
 
 @Component
 public class UserServiceImpl implements UserService {

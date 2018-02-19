@@ -1,4 +1,4 @@
-package xyz.timesun.cloud.cloudmall.web;
+package xyz.timessun.cloud.cloudmall.web;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import xyz.timesun.cloud.cloudmall.core.bo.UserBO;
-import xyz.timesun.cloud.cloudmall.service.UserService;
+import xyz.timessun.cloud.cloudmall.core.bo.UserBO;
+import xyz.timessun.cloud.cloudmall.service.UserService;
 
 @RestController
 @RequestMapping(value = "/user")

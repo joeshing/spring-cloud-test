@@ -1,4 +1,4 @@
-package xyz.timesun.cloud.cloudmall.web;
+package xyz.timessun.cloud.cloudmall.web;
 
 import java.net.SocketException;
 
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import xyz.timesun.cloud.cloudmall.core.bo.UserBO;
+import xyz.timessun.cloud.cloudmall.core.bo.UserBO;
 
 @RestController
 @RequestMapping(value = "/ribbon-consumer")
