@@ -1,0 +1,6 @@
+server:
+  port: 8802
+eureka:
+  client:
+    healthcheck:
+      enabled: true
