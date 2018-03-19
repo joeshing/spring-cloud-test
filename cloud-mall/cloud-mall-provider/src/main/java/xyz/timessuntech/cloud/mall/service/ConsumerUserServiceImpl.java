@@ -11,10 +11,10 @@ import org.springframework.web.client.RestTemplate;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
-import xyz.timessuntech.cloud.cloudmall.core.bo.UserBO;
+import xyz.timessuntech.cloud.mall.core.bo.UserBO;
 
 @Service
-public class ConsumerUserService {
+public class ConsumerUserServiceImpl {
 
 	private final Logger logger = Logger.getLogger(getClass());
 
@@ -28,7 +28,7 @@ public class ConsumerUserService {
 	}
 
 	@HystrixCommand(fallbackMethod = "helloFallback", commandKey = "MALL-PROVIDER")
-	public UserBO get(String name) {
+	public UserBO getUserBOByName(String name) {
 		return restTemplate.getForObject("http://CLOUD-MALL-PROVIDER/user/get?name={1}", UserBO.class, name);
 	}
 

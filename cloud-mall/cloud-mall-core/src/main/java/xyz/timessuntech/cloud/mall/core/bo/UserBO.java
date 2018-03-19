@@ -1,4 +1,4 @@
-package xyz.timessuntech.cloud.cloudmall.core.bo;
+package xyz.timessuntech.cloud.mall.core.bo;
 
 public class UserBO {
 
