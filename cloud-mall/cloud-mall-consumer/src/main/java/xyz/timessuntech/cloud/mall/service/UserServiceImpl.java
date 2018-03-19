@@ -1,4 +1,4 @@
-package xyz.timessuntech.cloud.cloudmall.service;
+package xyz.timessuntech.cloud.mall.service;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,10 +7,10 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.stereotype.Component;
 
-import xyz.timessuntech.cloud.cloudmall.core.bo.UserBO;
+import xyz.timessuntech.cloud.mall.core.bo.UserBO;
 
 @Component
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl{
 
 	private Map<String, UserBO> cache = new HashMap<>();
 	private AtomicLong userNumber = new AtomicLong(10000);
@@ -19,24 +19,12 @@ public class UserServiceImpl implements UserService {
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * xyz.timessuntech.cloud.cloudmall.service.UserService#getUserBOById(java.lang.
-	 * String)
-	 */
-	@Override
-	public UserBO getUserBOById(String id) {
-		return cache.get(id);
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
 	 * xyz.timessuntech.cloud.cloudmall.service.UserService#create(java.lang.String)
 	 */
-	@Override
+	
 	public UserBO create(String name) {
 		if (cache.containsKey(name)) {
-			return getUserBOByName(name);
+			return get(name);
 		}
 		UserBO user = new UserBO(UUID.randomUUID().toString(), userNumber.incrementAndGet(), name, true);
 		cache.put(user.getId(), user);
@@ -44,12 +32,12 @@ public class UserServiceImpl implements UserService {
 		return user;
 	}
 
-	@Override
-	public UserBO getUserBOByName(String name) {
+	
+	public UserBO get(String name) {
 		return cache.get(name);
 	}
 
-	@Override
+	
 	public boolean delete(String name) {
 		if(cache.containsKey(name)==false) {
 			throw new RuntimeException("undefine: name " + name);

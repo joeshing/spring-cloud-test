@@ -1,4 +1,4 @@
-package xyz.timessuntech.cloud.cloudmall.web;
+package xyz.timessuntech.cloud.mall.web;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
