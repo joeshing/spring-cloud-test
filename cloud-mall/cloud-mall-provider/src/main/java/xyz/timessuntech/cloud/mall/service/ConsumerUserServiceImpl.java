@@ -1,12 +1,8 @@
 package xyz.timessuntech.cloud.mall.service;
 
-import java.net.SocketException;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.client.RestTemplate;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
@@ -44,6 +40,6 @@ public class ConsumerUserServiceImpl {
 	}
 	
 	public UserBO helloFallback(String name) {
-		return null;
+		return new UserBO("Nil");
 	}
 }
