@@ -1,49 +1,61 @@
 package xyz.timessuntech.cloud.mall.service;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
 import java.util.concurrent.atomic.AtomicLong;
 
+import javax.annotation.Resource;
+
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import xyz.timessuntech.cloud.mall.core.bo.UserBO;
+import xyz.timessuntech.cloud.mall.dao.MallUserDao;
+import xyz.timessuntech.cloud.mall.dao.entity.MallUser;
 
 @Component
-public class UserServiceImpl{
+public class UserServiceImpl implements InitializingBean {
 
-	private Map<String, UserBO> cache = new HashMap<>();
+	@Resource
+	private MallUserDao mallUserDao;
 	private AtomicLong userNumber = new AtomicLong(10000);
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * xyz.timessuntech.cloud.cloudmall.service.UserService#create(java.lang.String)
-	 */
-	
-	public UserBO create(String name) {
-		if (cache.containsKey(name)) {
-			return get(name);
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		Long max = mallUserDao.queryMaxNumber();
+		if (max!=null && max > 0) {
+			userNumber = new AtomicLong(max);
 		}
-		UserBO user = new UserBO(UUID.randomUUID().toString(), userNumber.incrementAndGet(), name, true);
-		cache.put(user.getId(), user);
-		cache.put(name, user);
-		return user;
 	}
 
-	
-	public UserBO get(String name) {
-		return cache.get(name);
+	@Transactional
+	public UserBO create(String email) {
+		if (mallUserDao.findByEmail(email) != null) {
+			return get(email);
+		}
+		MallUser user = new MallUser();
+		user.setNumber(userNumber.incrementAndGet());
+		user.setEmail(email);
+		mallUserDao.save(user);
+		return new UserBO(user.getId(), user.getNumber(), user.getEmail(), user.getOperation().isEnable());
 	}
 
-	
-	public boolean delete(String name) {
-		if(cache.containsKey(name)==false) {
-			throw new RuntimeException("undefine: name " + name);
+	public UserBO get(String email) {
+		MallUser user = mallUserDao.findByEmail(email);
+		if (user != null) {
+			return new UserBO(user.getId(), user.getNumber(), user.getEmail(), user.getOperation().isEnable());
+		} else {
+			return null;
 		}
-		UserBO user = cache.remove(name);
-		cache.remove(user.getId());
-		return true;
+	}
+
+	@Transactional
+	public boolean delete(String id) {
+		try {
+			mallUserDao.delete(id);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 }
